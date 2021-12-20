@@ -23,7 +23,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(docs));
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Bienvenido al Backend VLIBRARY" });
+  res.send( " <h1>  Bienvenido al Backend VLIBRARY Integrates: Luciano Paniagua, Rodrigo Viladegut, Manuel Valenzuela <h1/>" );
 });
 
 require("./routes/libro.routes.js")(app);
