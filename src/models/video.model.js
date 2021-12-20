@@ -11,7 +11,7 @@ const Video =  function(video){
 }; 
 
 Video.create = (newVideo, result) => {
-    sql.query("INSERT INTO Videos SET ?", newVideo, (err, res) => {
+    sql.query("INSERT INTO videos SET ?", newVideo, (err, res) => {
       if (err) {
         console.log("error: ", err);
         result(err, null);
@@ -24,7 +24,7 @@ Video.create = (newVideo, result) => {
   };
 
   Video.getAll = (result) => {
-    let query = "SELECT * FROM Videos ";
+    let query = "SELECT * FROM videos ";
   
     sql.query(query, (err, res) => {
       if (err) {

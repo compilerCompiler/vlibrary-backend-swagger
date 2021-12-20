@@ -13,7 +13,7 @@ const BoletaReservacion = function(boletareservacion) {
 };
 
 BoletaReservacion.create = (newBoletaReservacion, result) => {
-    let query = "INSERT INTO boletareservacion (id_libro,id_usuario,fecha_reservacion,fecha_devolucion) values("
+    let query = "INSERT INTO boletareservacion (Id_libro,Id_usuario,Fecha_reservacion,Fecha_devolucion) values("
     query+=newBoletaReservacion.id_libro+","
     query+=newBoletaReservacion.id_usuario+" ,"
     query+=newBoletaReservacion.fecha_reservacion+","+newBoletaReservacion.fecha_devolucion+")"
@@ -24,7 +24,7 @@ BoletaReservacion.create = (newBoletaReservacion, result) => {
       return;
     }
     sql.query(
-        "UPDATE libro SET reservado = true WHERE id_libro = ?",
+        "UPDATE libro SET reservado = true WHERE Id_libro = ?",
         [newBoletaReservacion.id_libro],
         (err, resUpdate) => {
           if (err) {

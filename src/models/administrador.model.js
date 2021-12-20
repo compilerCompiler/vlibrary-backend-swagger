@@ -13,7 +13,7 @@ class validationError extends Error{
 };
 
 Administrador.create = (newAdmi, result) => {
-    sql.query("INSERT INTO Administrador SET ?", newAdmi, (err, res) => {
+    sql.query("INSERT INTO administrador SET ?", newAdmi, (err, res) => {
       if (err) {
         console.log("error: ", err);
         result(err, null);
@@ -26,7 +26,7 @@ Administrador.create = (newAdmi, result) => {
   };
 
   Administrador.findOne = (id, result) => {
-    sql.query("SELECT Id_persona,Id_admi,Codigo_admi,Id_usuario,Nombre,Profesion FROM Administrador inner join persona using (id_persona) where id_usuario= ?", id, (err, res) => {
+    sql.query("SELECT Id_persona,Id_admi,Codigo_admi,Id_usuario,Nombre,Profesion FROM administrador inner join persona using (Id_persona) where Id_usuario= ?", id, (err, res) => {
         if (err) {
           console.log("error: ", err);
           result(err, null);

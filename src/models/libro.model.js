@@ -15,7 +15,7 @@ const Libro = function(libro) {
 };
 
 Libro.create = (newLibro, result) => {
-  sql.query("INSERT INTO Libro SET ?", newLibro, (err, res) => {
+  sql.query("INSERT INTO libro SET ?", newLibro, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -56,7 +56,7 @@ Libro.getAll = (result) => {
 };
 
 Libro.remove = (id, result) => {
-  sql.query("DELETE FROM libro WHERE id_libro = ?", id, (err, res) => {
+  sql.query("DELETE FROM libro WHERE Id_libro = ?", id, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);

@@ -10,7 +10,7 @@ const Persona =  function(persona){
 }; 
 
 Persona.create = (newPersona, result) => {
-    sql.query("INSERT INTO Persona SET ?", newPersona, (err, res) => {
+    sql.query("INSERT INTO persona SET ?", newPersona, (err, res) => {
       if (err) {
         console.log("error: ", err);
         result(err, null);
@@ -24,7 +24,7 @@ Persona.create = (newPersona, result) => {
   
 
   Persona.getAll = (result) => {
-    let query = "SELECT Id_persona,Id_Usuario,Nombre,Profesion,Nombre_usuario,Password,Correo,Ultimo_Inicio FROM Persona INNER JOIN Usuario using (id_usuario) WHERE Persona.id_persona NOT IN (SELECT id_persona From Administrador )";
+    let query = "SELECT Id_persona,Id_Usuario,Nombre,Profesion,Nombre_usuario,Password,Correo,Ultimo_inicio FROM persona INNER JOIN usuario using (id_usuario) WHERE persona.Id_persona NOT IN (SELECT Id_persona From administrador )";
   
     sql.query(query, (err, res) => {
       if (err) {
@@ -39,7 +39,7 @@ Persona.create = (newPersona, result) => {
   };
   
   Persona.remove = (id, result) => {
-    sql.query("DELETE FROM Persona WHERE id_persona = ?", id, (err, res) => {
+    sql.query("DELETE FROM persona WHERE Id_persona = ?", id, (err, res) => {
       if (err) {
         console.log("error: ", err);
         result(null, err);

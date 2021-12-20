@@ -31,7 +31,7 @@ Usuario.create = (newUsuario, result) => {
 // Usuario findOne
 Usuario.findOne = (login, result) => {
   sql.query(
-    "SELECT * FROM usuario WHERE nombre_usuario = ? and password = ?",
+    "SELECT * FROM usuario WHERE Nombre_usuario = ? and Password = ?",
     [login.nombre_usuario, login.password],
     (err, res) => {
       if (err) {
@@ -43,7 +43,7 @@ Usuario.findOne = (login, result) => {
       //update last_login
       if(res[0]){ 
         sql.query(
-          "UPDATE usuario SET ultimo_inicio = ? WHERE id_usuario = ?",
+          "UPDATE usuario SET Ultimo_inicio = ? WHERE Id_usuario = ?",
           [new Date(),res[0].Id_usuario],
           (err, resUpdate) => {
             if (err) {
@@ -67,7 +67,7 @@ Usuario.findOne = (login, result) => {
 };
 
 Usuario.remove = (id, result) => {
-  sql.query("DELETE FROM Usuario WHERE id_usuario = ?", id, (err, res) => {
+  sql.query("DELETE FROM usuario WHERE Id_usuario = ?", id, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
