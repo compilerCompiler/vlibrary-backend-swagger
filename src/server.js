@@ -23,7 +23,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(docs));
 
 // simple route
 app.get("/", (req, res) => {
-  res.send( " <h1>  Bienvenido al Backend VLIBRARY <p> Integrates: Luciano Paniagua, Rodrigo Viladegut, Manuel Valenzuela<p/> <p> Enlace a swagger: <a href='https://vlibrary-official.herokuapp.com/api-docs'> API-DOCS </a> </p> </h1>" );
+  res.send( " <h1>  Bienvenido al Backend VLIBRARY <p> Integrates: Luciano Paniagua, Rodrigo Viladegut, Manuel Valenzuela<p/> <p> Enlace a swagger: <a href='https://vlibrary-official.herokuapp.com/api-docs'> API-DOCS </a> </p> <p> Enlace a las diapositivas: <a href='https://docs.google.com/presentation/d/1lQorlXwD5rKzNlMli-KInSDkWlOpCyR_G0sTwJNcpoo/edit#slide=id.g35f391192_00'> PRESENTACION </a> </p> </h1>" );
 });
 
 require("./routes/libro.routes.js")(app);
